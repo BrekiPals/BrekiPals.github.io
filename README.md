@@ -1,1 +1,1 @@
-# BrekiPals.github.io
+# Velkomin á Vefsíðuna mína
