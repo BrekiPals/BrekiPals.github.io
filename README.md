@@ -16,9 +16,9 @@ Personal email address: palsbreki (at) gmail (dot) com .
 * August 2019 -- December 2019: Exchange program at [McGill](https://www.mcgill.ca/), Canada.
 
 ## Projects
-1. Symplectic manifolds. <a href="./pdfs/Symplectic_geometry.pdf" target="_blank">PDF</a>. In Icelandic.\
+1. Symplectic manifolds. <a href="pdfs/Sympletic_Geometry.pdf" target="_blank">PDF</a>. In Icelandic.\
 Advisor: Prof. [Valentina Giangreco M Puletti](https://www.hi.is/staff/vgmp)
-2. The Hasse Minkowski Theorem. <a href="./pdfs/TER_Hasse_Minkowski.pdf" target="_blank">PDF</a>. In English.\
+2. The Hasse Minkowski Theorem. <a href="pdfs/TER_Hasse_Minkowski.pdf" target="_blank">PDF</a>. In English.\
 Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
 
 Last updated: 11 Aug, 2022
