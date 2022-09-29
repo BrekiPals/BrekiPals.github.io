@@ -24,7 +24,7 @@ Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
 ## Interests
 I like solving interesting problems and puzzle of various kinds,
 * I participated in the <a href="https://www.imo-official.org/participant_r.aspx?id=27287" target="_blank">International Mathematical Olympiad</a> in 2017 and 2018
-* I find interesting problems related to programing and math on the folowing sites <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a> and <a href="https://open.kattis.com/users/breki-palsson". target="_blank">Kattis</a>. 
+* I find interesting problems related to programing and math on the folowing sites <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a> and <a href="https://open.kattis.com/users/breki-palsson" target="_blank">Kattis</a>. 
 
 
 Last updated: 29 Sept, 2022
