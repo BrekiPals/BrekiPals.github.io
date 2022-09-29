@@ -25,7 +25,9 @@ Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
 ## Interest
 1. <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a>. 
 2. <a href="https://open.kattis.com/users/breki-palsson" target="_blank">Kattis</a>. 
-Last updated: 11 Aug, 2022
+
 
 ## Notable Achievements
-1. I participated in the <a href="https://www.imo-official.org/participant_r.aspx?id=27287" target="_blank">International Mathematical Olympiad</a> in 2017 and 2018
+I participated in the <a href="https://www.imo-official.org/participant_r.aspx?id=27287" target="_blank">International Mathematical Olympiad</a> in 2017 and 2018
+
+Last updated: 29 Sept, 2022
