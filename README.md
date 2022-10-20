@@ -2,6 +2,7 @@
 
 I am a Master 2 student of the joint program "[M2 de Mathématiques Fondamentales](https://master-math-fonda.imj-prg.fr/index.php)" by École Normale Superieure, Sorbonne Université, Université de Paris, and Université Sorbonne Paris Nord. I am registered in Sorbonne Université , widely-known as "Université de Paris VI".
 
+I am interested in topology, number theory and geomerty.
 ## Contacts
 
 Personal email address: palsbreki (at) gmail (dot) com .
@@ -25,4 +26,5 @@ I like solving interesting problems and puzzle of various kinds,
 * I find interesting problems related to programing and math on the folowing sites <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a> and <a href="https://open.kattis.com/users/breki-palsson" target="_blank">Kattis</a>. 
 
 
-Last updated: 29 Sept, 2022
+<a href="pdfs/CV.pdf" target="_blank">CV</a> (in French).
+Last updated: 20 Sept, 2022
