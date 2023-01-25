@@ -2,7 +2,7 @@
 
 I am a Master 2 student of the joint program "[M2 de Mathématiques Fondamentales](https://master-math-fonda.imj-prg.fr/index.php)" by École Normale Superieure, Sorbonne Université, Université de Paris, and Université Sorbonne Paris Nord. I am registered in Sorbonne Université , widely-known as "Université de Paris VI".
 
-I am interested in topology, number theory and geomerty. 
+My main area of interest is number theory, particularly in modular forms. I enjoy problems that combine both analytical and algebraic elements and am interested in finding simple solutions to challenging questions. 
 ## Contacts
 
 Personal email address: palsbreki (at) gmail (dot) com .
