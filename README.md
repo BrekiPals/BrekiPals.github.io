@@ -9,7 +9,7 @@ Personal email address: palsbreki (at) gmail (dot) com .
 
 ## Education
 
-* September 2022 -- current: Master 2 of ["Mathématiques fondamentales"](https://master-math-fonda.imj-prg.fr/home.html) at Sorbonne Université, France, I am currently following courses named: Introduction aux formes modulaires, La combinatoire additive quadratique and Introduction à l'arithmétique des courbes elliptiques
+* September 2022 -- current: Master 2 of ["Mathématiques fondamentales"](https://master-math-fonda.imj-prg.fr/home.html) at Sorbonne Université, France.
 * September 2021 -- June 2022: Master 1 of ["Mathématiques et applications"](http://master.math.sorbonne-universite.fr/fr/niveau_m1.html) with Mention "bien"
 * August 2018 -- June 2021: Bachelor of Science with "First class with distinction", [Department of Mathematical Sciences](https://www.hi.is/staerdfraedi) at [University of Iceland](https://www.hi.is/).
 * August 2019 -- December 2019: Exchange program at [McGill](https://www.mcgill.ca/), Canada.
