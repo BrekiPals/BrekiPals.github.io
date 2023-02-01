@@ -29,4 +29,4 @@ I like solving interesting problems and puzzle of various kinds,
 
 
 <a href="pdfs/CV.pdf" target="_blank">CV</a>.
-Last updated: 13 Nov, 2022
+Last updated: 1 feb, 2023
