@@ -19,8 +19,8 @@ Personal email address: palsbreki (at) gmail (dot) com .
 Advisor: Prof. [Valentina Giangreco M Puletti](https://www.hi.is/staff/vgmp)
 2. The Hasse Minkowski Theorem. <a href="pdfs/TER_Hasse_Minkowski.pdf" target="_blank">PDF</a>. In English.\
 Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
-3. Modular Forms and Congruences. <a href="pdfs/ModularFormsAndCongruences.pdf" target="_blank">PDF</a> 
-A presentation for a mathematics seminar in [Farum](https://geometriamafia.ru/).
+3. Modular Forms and Congruences. <a href="pdfs/ModularFormsAndCongruences.pdf" target="_blank">PDF</a>. \
+A presentation for [a Mathematics Seminar in Farum](https://geometriamafia.ru/).
 
 ## Interests
 I like solving interesting problems and puzzle of various kinds,
