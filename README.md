@@ -28,13 +28,13 @@ I like solving interesting problems and puzzle of various kinds,
 * I find interesting problems related to programing and math on the folowing sites <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a> and <a href="https://open.kattis.com/users/breki-palsson" target="_blank">Kattis</a>. 
 
 ### Current
-List of the corses I have completed this year:
+List of the courses I have completed this year:
  - Adèles et fonction L abélienne
  - Variétés algébriques
  - Introduction aux formes modulaires
  - La combinatoire additive quadratique 
 
-List of corses I have not yet completetd but intend to:
+List of courses I have not yet completetd but intend to:
   - Fonction L de Rankin-Selberg
   - Introduction au programme de Langlands géométrique
   - Congruences et formes modulaires
