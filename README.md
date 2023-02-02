@@ -10,18 +10,6 @@ Personal email address: palsbreki (at) gmail (dot) com .
 ## Education
 
 * September 2022 -- current: Master 2 of ["Mathématiques fondamentales"](https://master-math-fonda.imj-prg.fr/home.html) at Sorbonne Université, France.
----
-List of the corses I have completed in this program:
- - Adèles et fonction L abélienne
- - Variétés algébriques
- - Introduction aux formes modulaires
- - La combinatoire additive quadratique
----
-List of corses I have not yet completetd but intend to:
-  - Fonction L de Rankin-Selberg
-  - Introduction au programme de Langlands géométrique
-  - Congruences et formes modulaires
-
 * September 2021 -- June 2022: Master 1 of ["Mathématiques et applications"](http://master.math.sorbonne-universite.fr/fr/niveau_m1.html) with Mention "bien"
 * August 2018 -- June 2021: Bachelor of Science with "First class with distinction", [Department of Mathematical Sciences](https://www.hi.is/staerdfraedi) at [University of Iceland](https://www.hi.is/).
 * August 2019 -- December 2019: Exchange program at [McGill](https://www.mcgill.ca/), Canada.
@@ -42,3 +30,17 @@ I like solving interesting problems and puzzle of various kinds,
 
 <a href="pdfs/CV.pdf" target="_blank">CV</a>.
 Last updated: 1 feb, 2023
+
+### Current
+---
+List of the corses I have completed this year:
+ - Adèles et fonction L abélienne
+ - Variétés algébriques
+ - Introduction aux formes modulaires
+ - La combinatoire additive quadratique
+---
+List of corses I have not yet completetd but intend to:
+  - Fonction L de Rankin-Selberg
+  - Introduction au programme de Langlands géométrique
+  - Congruences et formes modulaires
+---
