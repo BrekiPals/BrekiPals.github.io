@@ -32,15 +32,13 @@ I like solving interesting problems and puzzle of various kinds,
 Last updated: 1 feb, 2023
 
 ### Current
----
 List of the corses I have completed this year:
  - Adèles et fonction L abélienne
  - Variétés algébriques
  - Introduction aux formes modulaires
- - La combinatoire additive quadratique
----
+ - La combinatoire additive quadratique 
+
 List of corses I have not yet completetd but intend to:
   - Fonction L de Rankin-Selberg
   - Introduction au programme de Langlands géométrique
   - Congruences et formes modulaires
----
