@@ -1,5 +1,4 @@
 theme: jekyll-theme-minimal
 title: BREKI'S HOMEPAG
-description: This is Breki Pálsson's academic homepage!
-cv: <a href="pdfs/CV.pdf" target="_blank">CV</a>. Last updated: 1 feb, 2023
+description: This is Breki Pálsson's academic homepage! <a href="pdfs/CV.pdf" target="_blank">CV</a>.
 logo: /image/portrait.jpg
