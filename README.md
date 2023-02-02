@@ -14,17 +14,6 @@ Personal email address: palsbreki (at) gmail (dot) com .
 * August 2018 -- June 2021: Bachelor of Science with "First class with distinction", [Department of Mathematical Sciences](https://www.hi.is/staerdfraedi) at [University of Iceland](https://www.hi.is/).
 * August 2019 -- December 2019: Exchange program at [McGill](https://www.mcgill.ca/), Canada.
 
-## Current Corses 
-List of the corses I have completed in this program: \
- - Adèles et fonction L abélienne
- - Variétés algébriques
- - Introduction aux formes modulaires
- - La combinatoire additive quadratique \
-List of corses I have not yet completetd but intend to: \
-  - Fonction L de Rankin-Selberg
-  - Introduction au programme de Langlands géométrique
-  - Congruences et formes modulaires\
-
 ## Projects
 1. Symplectic manifolds. <a href="pdfs/Sympletic_Geometry.pdf" target="_blank">PDF</a>. In Icelandic.\
 Advisor: Prof. [Valentina Giangreco M Puletti](https://www.hi.is/staff/vgmp)
