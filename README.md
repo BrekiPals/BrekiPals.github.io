@@ -36,5 +36,4 @@ List of the courses I have completed this academic year:
 
 List of courses I have not yet completetd but intend to:
   - Fonction L de Rankin-Selberg
-  - Introduction au programme de Langlands géométrique
   - Congruences et formes modulaires
