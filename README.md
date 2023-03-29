@@ -21,7 +21,7 @@ Advisor: Prof. [Valentina Giangreco M Puletti](https://www.hi.is/staff/vgmp)
 Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
 3. Modular Forms and Congruences. <a href="pdfs/ModularFormsAndCongruences.pdf" target="_blank">PDF</a>. \
 A presentation for [a Mathematics Seminar in Farum](https://geometriamafia.ru/).
-4. I will soon start my masters project on the topic on the distribution of coefficient fields of new-forms. \
+4. I will soon start a masters project on the topic on the distribution of coefficient fields of new-forms. \
 Advisor: [Gabor Wiese](https://math.uni.lu/~wiese/)
 
 
