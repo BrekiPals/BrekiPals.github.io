@@ -21,11 +21,16 @@ Advisor: Prof. [Valentina Giangreco M Puletti](https://www.hi.is/staff/vgmp)
 Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
 3. Modular Forms and Congruences. <a href="pdfs/ModularFormsAndCongruences.pdf" target="_blank">PDF</a>. \
 A presentation for [a Mathematics Seminar in Farum](https://geometriamafia.ru/).
+4. I will soon start my masters project on the topic on the distribution of coefficient fields of new-forms. \
+Advisor: [Gabor Wiese](https://math.uni.lu/~wiese/)
+
 
 ## Interests
 I like solving interesting problems and puzzle of various kinds,
 * I participated in the <a href="https://www.imo-official.org/participant_r.aspx?id=27287" target="_blank">International Mathematical Olympiad</a> in 2017 and 2018
 * I find interesting problems related to programing and math on the folowing sites <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a> and <a href="https://open.kattis.com/users/breki-palsson" target="_blank">Kattis</a>. 
+* I am interested in manny types of board games, and in particular I am a big GO fan! 
+* For sport i practice Water Polo and Climbing.
 
 ## Current
 List of the courses I have completed this academic year:
@@ -33,7 +38,7 @@ List of the courses I have completed this academic year:
  - Variétés algébriques
  - Introduction aux formes modulaires
  - La combinatoire additive quadratique 
-
+ - Fonction L de Rankin-Selberg
 List of courses I have not yet completed but intend to:
-  - Fonction L de Rankin-Selberg
-  - Congruences et formes modulaires
+ - Algebraic techniques in optimization
+ - Congruences et formes modulaires
