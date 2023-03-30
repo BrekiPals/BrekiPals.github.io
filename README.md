@@ -39,7 +39,7 @@ List of the courses I have completed this academic year:
  - Introduction aux formes modulaires
  - La combinatoire additive quadratique 
  - Fonction L de Rankin-Selberg 
-
+---
 List of courses I have not yet completed but intend to:
  - Algebraic techniques in optimization
  - Congruences et formes modulaires
