@@ -34,12 +34,11 @@ I like solving interesting problems and puzzle of various kinds,
 
 ## Current
 List of the courses I have completed this academic year:
- - Adèles et fonction L abélienne
- - Variétés algébriques
- - Introduction aux formes modulaires
- - La combinatoire additive quadratique 
- - Fonction L de Rankin-Selberg 
----
+ * Adèles et fonction L abélienne
+ * Variétés algébriques
+ * Introduction aux formes modulaires
+ * La combinatoire additive quadratique 
+ * Fonction L de Rankin-Selberg \
 List of courses I have not yet completed but intend to:
- - Algebraic techniques in optimization
- - Congruences et formes modulaires
+ * Algebraic techniques in optimization
+ * Congruences et formes modulaires
