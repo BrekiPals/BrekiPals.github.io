@@ -21,7 +21,7 @@ Advisor: Prof. [Valentina Giangreco M Puletti](https://www.hi.is/staff/vgmp)
 Advisor: Prof. [Antoine Ducros](https://webusers.imj-prg.fr/~antoine.ducros/)
 3. Modular Forms and Congruences. <a href="pdfs/ModularFormsAndCongruences.pdf" target="_blank">PDF</a>. \
 A presentation for [a Mathematics Seminar in Farum](https://geometriamafia.ru/).
-4. I will soon start a masters project on the topic on the distribution of coefficient fields of new-forms. \
+4. I am currently working on a masters theisis on the topic on the distribution of coefficient fields of new-forms. \
 Advisor: [Gabor Wiese](https://math.uni.lu/~wiese/)
 
 
@@ -29,11 +29,11 @@ Advisor: [Gabor Wiese](https://math.uni.lu/~wiese/)
 I like solving interesting problems and puzzle of various kinds,
 * I participated in the <a href="https://www.imo-official.org/participant_r.aspx?id=27287" target="_blank">International Mathematical Olympiad</a> in 2017 and 2018
 * I find interesting problems related to programing and math on the folowing sites <a href="https://projecteuler.net/location=Iceland" target="_blank">Project Euler</a> and <a href="https://open.kattis.com/users/breki-palsson" target="_blank">Kattis</a>. 
-* I am interested in manny types of board games, and in particular I am a big GO fan! 
-* For sport i practice water polo and climbing.
+* I am interested in manny types of board games, in particular GO and Chess. 
+* For sport I practice water polo and climbing.
 
 ## Current
-List of the courses I have completed this academic year:
+List of the courses I completed this academic year:
  * Adèles et fonction L abélienne
  * Variétés algébriques
  * Introduction aux formes modulaires
