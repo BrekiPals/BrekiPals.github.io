@@ -42,4 +42,5 @@ List of the courses I completed this academic year:
  * Algebraic techniques in optimization
  * Congruences et formes modulaires
  
- <a href="pdfs/Theisis.pdf" target="_blank">PDF</a>
+ <a href="Presentation_Masters_Theisis.pdf" target="_blank">PDF</a>
+ 
