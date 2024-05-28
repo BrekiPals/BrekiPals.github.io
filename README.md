@@ -41,6 +41,8 @@ List of the courses I completed this academic year:
  * Fonction L de Rankin-Selberg 
  * Algebraic techniques in optimization
  * Congruences et formes modulaires
+
+ * http://thriko.is/live/
  
  <a href="Presentation_Masters_Theisis.pdf" target="_blank">PDF</a>
  
