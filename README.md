@@ -14,7 +14,7 @@ Personal email address: palsbreki (at) gmail (dot) com .
 
 * June 2023 -- October 2023: Research internship resulting in a masters thesis at the University of Luxembourg.
 * September 2022 -- June 2023: Master 2 of ["Mathématiques fondamentales"](https://master-math-fonda.imj-prg.fr/home.html) at Sorbonne Université, France.
-* September 2021 -- June 2022: Master 1 of ["Mathématiques et applications"](http://master.math.sorbonne-universite.fr/fr/niveau_m1.html) with Mention "Bien"
+* September 2021 -- June 2022: Master 1 of ["Mathématiques et applications"](http://master.math.sorbonne-universite.fr/fr/niveau_m1.html).
 * August 2018 -- June 2021: Bachelor of Science with "First class with distinction", [Department of Mathematical Sciences](https://www.hi.is/staerdfraedi) at [University of Iceland](https://www.hi.is/).
 * August 2019 -- December 2019: Exchange program at [McGill](https://www.mcgill.ca/), Canada.
 
