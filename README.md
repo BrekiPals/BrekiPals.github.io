@@ -4,7 +4,7 @@ I am a PhD student at the [University of Iceland](https://math.hi.is/) under the
 
 My main area of research is in the scaling limit of random trees. Other interests include number theory, topology, combinatorics and algebra.
 
-I finished my masters thesis under the supervision of professor [Gabor Wiese](https://math.uni.lu/~wiese/) on the asymptotic behaviour of modular forms modulo $p$, and completed the joint program "[M2 de Mathématiques Fondamentales](https://master-math-fonda.imj-prg.fr/index.php)" by Sorbonne Université, Université de Paris, and Université Sorbonne Paris Nord. I was registered in Sorbonne Université , widely known as "Université de Paris VI".
+I finished my masters thesis under the supervision of professor [Gabor Wiese](https://math.uni.lu/~wiese/) on the asymptotic behaviour of the coefficient field of modular forms modulo $p$, and completed the joint program "[M2 de Mathématiques Fondamentales](https://master-math-fonda.imj-prg.fr/index.php)" by Sorbonne Université, Université de Paris, and Université Sorbonne Paris Nord. I was registered in Sorbonne Université , widely known as "Université de Paris VI".
 
 ## Contacts
 
