@@ -1,4 +1,4 @@
-# Breki Pálsson
+# Breki Pálsson TEST
 
 I am a PhD student at the [University of Iceland](https://math.hi.is/) under the supervision of Professor [Sigurður Örn Stefánsson](https://sigurdur.hi.is/). 
 
