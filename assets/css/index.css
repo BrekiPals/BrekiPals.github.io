@@ -1,0 +1,95 @@
+#profilePic {
+    height: 500px;
+    width: 500px;
+}
+
+#profile_box {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.navbar {
+    margin-left: 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1000;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.navbar a{
+    text-decoration: none;
+}
+
+
+#particles-js{
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121213;
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+
+.card {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    width: 100%;
+}
+.card h1 {
+    color: royalblue;
+    font-size: 70px;
+}
+.card h3 {
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    align-self: end;
+}
+
+
+h1 {
+    color: royalblue;
+    display: block;
+    font-size: 2em;
+    margin-top: 1cm;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+
+  a.blue {
+    color: blue;
+}
+
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+  }
+
+.body {
+    margin: 0;
+}
+
+.profile {
+    text-align: center;
+}
+.profile header{
+    font-style: italic;
+}
+
+.CV {
+    padding-top: 20px;
+}
