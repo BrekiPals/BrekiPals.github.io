@@ -7,26 +7,11 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
 body{
     min-height: 100vh;
 }
-
-#profilePic {
-    height: 500px;
-    width: 500px;
-}
-
-#profile_box {
-    display: flex;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 
 nav{
     background-color: white;
@@ -89,18 +74,47 @@ nav li:first-child{
     display: none;
 }
 
-
-
 #particles-js{
     padding: 20px;
     top: -30px;
     width: 100% !important;
+    display: flex;
     position: relative;
     background-color: #121213;
     background-image: url('');
     background-size: cover;
     background-repeat: no-repeat; 
   }
+
+
+
+.profile_container {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    border: 1px solid #333;
+    background-color: white;
+}
+.picture_container {
+    padding: 10px;
+    max-width: 100%;
+    display: block;
+    width: 40%;
+    height: 100%;
+    background-image: url('path/to/your-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.intro-text {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
 
 .card {
     position: absolute;
@@ -152,6 +166,11 @@ h1 {
 
 .CV {
     padding-top: 20px;
+}
+
+.flag_counter {
+    text-align: center;
+    margin: 20px;
 }
 
 @media(max-width: 800px){
