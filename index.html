@@ -12,13 +12,24 @@
 
 <body>
  <!--- Navbar section-->
- <nav class = "navbar">
+ <nav>
+  <ul class = "sidebar">
+    <li onclick=hideSidebar()><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+    <li><a href = "./index.html"> Home </a></li>
+    <li><a href= "./projects.html">Projects</a></li>
+    <li><a href="./simulations.html">Simulations</a></li>
+    <li><a href="./other_interests.html">Other interests</a></li>
+    <li><a href="./curriculum.html">Curriculum</a></li>
+    <li><a href="./pictures.html">Pictures</a></li>
+     </ul>
   <ul>
     <li><a href = "./index.html"> Home </a></li>
-    <li><a href= "./projects.html">Projects</li>
-      <li><a href="./simulations.html">Simulations</a></li>
-      <li><a href="./other_interest.html">Other interest</a></li>
-      <li><a href="./Curriculum.html">Curriculum</a></li>
+    <li class = "hideOnMobile"><a href= "./projects.html">Projects</a></li>
+    <li class = "hideOnMobile"><a href="./simulations.html">Simulations</a></li>
+    <li class = "hideOnMobile"><a href="./other_interests.html">Other interests</a></li>
+    <li class = "hideOnMobile"><a href="./curriculum.html">Curriculum</a></li>
+    <li class = "hideOnMobile"><a href="./pictures.html">Pictures</a></li>
+    <li class = "menu-button" onclick=showSidebar()><a><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
   </ul>
  </nav>
 
@@ -27,7 +38,7 @@
 <!-- particles.js container -->
 
   <!-- Particles.js div -->
-  <div id="particles-js">
+  <div id="particles-js" style="width: 2000px; height: 1000px">
     <div class="card">
         <h1>Breki Pálsson</h1>
         <h3>
@@ -35,6 +46,8 @@
         </h3>
     </div>
 </div>
+
+<div class="vertical-line"></div>
 
 <div class = "profile">
   <header class = "major">
@@ -83,8 +96,15 @@
   <li>I enjoy various sports activities such as climbing, hiking, water polo, swimming, running and cycling.</li>
 </ul>
 
-<!-- scripts -->
 <script src="js/particles.js"></script>
 <script src="js/app.js"></script>
-</html>
-
+<script>
+  function showSidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'flex'
+  }
+  function hideSidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'none'
+  }
+</script>
