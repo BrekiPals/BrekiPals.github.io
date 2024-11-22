@@ -114,7 +114,9 @@ nav li:first-child{
     text-align: center;
 }
 
-
+.major header{
+    z-index: 500;
+}
 
 .card {
     position: absolute;
