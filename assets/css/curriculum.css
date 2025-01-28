@@ -1,0 +1,70 @@
+/* Main content styles */
+.main {
+    max-width: 100%;  /* Make div full width */
+    min-height: calc(100vh - 100px);
+    margin: 2rem auto;
+    padding: 2rem calc((100% - 800px) / 2); /* Center content with 800px width */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* CV section styles */
+.CV {
+    padding-top: 20px;
+}
+
+.CV h2 {
+    color: #1a73e8;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.CV ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.CV li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Links styling */
+.CV a {
+    color: #1a73e8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.CV a:hover {
+    color: #174ea6;
+    text-decoration: underline;
+}
+
+/* Additional styles for better readability */
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+    .main {
+        margin: 1rem;
+        padding: 1rem 2rem;
+        min-height: calc(100vh - 80px);
+        width: calc(100% - 2rem);
+    }
+    
+    .CV h2 {
+        font-size: 1.5rem;
+    }
+} 
