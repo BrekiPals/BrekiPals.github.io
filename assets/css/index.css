@@ -342,14 +342,89 @@ a:hover {
     }
     
     .main {
-        margin: 1rem;
+        margin: 0.5rem;
         padding: 1rem;
+        width: calc(100% - 1rem);
         min-height: calc(100vh - 80px);
-        width: calc(100% - 2rem);
+    }
+    
+    nav {
+        padding: 0.5rem 0;
     }
     
     nav ul {
+        padding: 0 0.5rem;
+    }
+    
+    nav ul li {
         padding: 0.5rem;
+    }
+    
+    nav a {
+        padding: 0 15px;
+    }
+
+    .sidebar {
+        width: 80%;
+        z-index: 1001;
+    }
+    
+    .sidebar li {
+        padding: 1rem;
+    }
+    
+    .sidebar a {
+        padding: 0.5rem 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-top: 0.5cm;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .card h1 {
+        font-size: 2em;
+    }
+
+    .card h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+    
+    .main {
+        margin: 0.25rem;
+        padding: 0.75rem;
+    }
+    
+    nav ul li {
+        padding: 0.25rem;
+    }
+    
+    nav a {
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    .card h1 {
+        font-size: 1.8em;
     }
 }
 
