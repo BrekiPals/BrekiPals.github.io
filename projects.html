@@ -5,6 +5,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href='./assets/css/index.css'>
+  <link rel="stylesheet" href='./assets/css/projects.css'>
   <title>Breki's Personal Website</title>
   <meta name='description' content='Brekis personal website.'>
   <meta name='keywords' content='math, mathematics, probability, breki palsson'>
@@ -34,10 +35,28 @@
   </nav>
 
   <div class="main">
-    <div class="image-container">
-       <img src="images/Wilsons/Demp-n=15.png" alt="Wilson's Image">
-      <img src="images/Wilsons/Demp-n=15_flat.png" alt="Wilson's Image">
-      
+    <div class="image-container" style="flex-direction: column; align-items: center;">
+      <div class="image-wrapper" style="width: 90%; margin: 0 auto;">
+        <img src="images/Wilsons/Demp-n=15.png" alt="Wilson's Image" class="dynamic-image">
+        <div class="image-overlay">
+          <h3>Wilson's Algorithm</h3>
+          <p>3D visualization of a uniform spanning tree</p>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="images/Wilsons/Demp-n=15_flat.png" alt="Wilson's Image" class="dynamic-image">
+        <div class="image-overlay">
+          <h3>Wilson's Algorithm (Flattened)</h3>
+          <p>2D projection of the spanning tree</p>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="images/Stick_breaking_picture.png" alt="Stick breaking picture" class="dynamic-image" style="width: 50%;">
+        <div class="image-overlay">
+          <h3>Stick Breaking</h3>
+          <p>Visualization of the stick breaking process</p>
+        </div>
+      </div>
     </div>
   </div>
 
