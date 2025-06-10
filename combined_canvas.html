@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Canvas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="circleCanvas" width="800" height="800"></canvas>
+    <canvas id="lineCanvas" width="800" height="800"></canvas>
+
+    <script src="js/p5.js"></script>
+    <script src="js/draw_peel.js"></script>
+    <script src="js/brownian_tree.js"></script>
+    <script>
+        // Circle Canvas Setup
+        let circleCanvas = document.getElementById('circleCanvas');
+        let circleCtx = circleCanvas.getContext('2d');
+
+        let nodes = [];
+        let num_nodes = 100;
+        let radius = 300; // Radius of the circle
+        let centerX = circleCanvas.width / 2;
+        let centerY = circleCanvas.height / 2;
+
+        function setupCircle() {
+            for (let i = 0; i < num_nodes; i++) {
+                let angle = (i * 2 * Math.PI) / num_nodes;
+                nodes.push({
+                    x: centerX + radius * Math.cos(angle),
+                    y: centerY + radius * Math.sin(angle),
+                    color: 'lightblue'
+                });
+            }
+            drawCircleNodes();
+        }
+
+        function drawCircleNodes() {
+            circleCtx.clearRect(0, 0, circleCanvas.width, circleCanvas.height);
+            for (let node of nodes) {
+                circleCtx.fillStyle = node.color;
+                circleCtx.beginPath();
+                circleCtx.arc(node.x, node.y, 8, 0, 2 * Math.PI);
+                circleCtx.fill();
+            }
+        }
+
+        // Line Canvas Setup
+        let lineCanvas = document.getElementById('lineCanvas');
+        let lineCtx = lineCanvas.getContext('2d');
+
+        function setupLine() {
+            lineCtx.clearRect(0, 0, lineCanvas.width, lineCanvas.height);
+            lineCtx.strokeStyle = 'black';
+            lineCtx.lineWidth = 2;
+
+            // Example line drawing
+            lineCtx.beginPath();
+            lineCtx.moveTo(100, 100);
+            lineCtx.lineTo(700, 700);
+            lineCtx.stroke();
+        }
+
+        // Initialize both canvases
+        setupCircle();
+        setupLine();
+    </script>
+</body>
+</html> 
