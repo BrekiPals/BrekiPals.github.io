@@ -128,3 +128,22 @@ function brownian(canvasId, messageId) {
   
   }
   
+// Assuming you have a function that draws arches
+function createBrownianArch(x, y) {
+    const arch = document.createElement('div');
+    arch.className = 'brownian-arch'; // Add a class for styling
+    arch.style.position = 'absolute';
+    arch.style.left = `${x}px`;
+    arch.style.top = `${y}px`;
+    arch.style.width = '50px'; // Set width as needed
+    arch.style.height = '20px'; // Set height as needed
+    arch.style.backgroundColor = 'rgba(0, 0, 255, 0.5)'; // Example color
+
+    // Add click event listener
+    arch.addEventListener('click', function() {
+        alert('Brownian arch clicked!'); // Replace with your desired action
+    });
+
+    document.body.appendChild(arch);
+}
+  
