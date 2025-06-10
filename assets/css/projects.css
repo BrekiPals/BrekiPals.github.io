@@ -98,3 +98,12 @@
     );
   }
 }
+
+.arch, .brownian-arch {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s; /* Add a transition for hover effect */
+}
+
+.arch:hover, .brownian-arch:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}

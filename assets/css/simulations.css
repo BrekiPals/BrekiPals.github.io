@@ -1,3 +1,461 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body{
+  min-height: 100vh;
+}
+
+nav{
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5f6368;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1a73e8;
+}
+
+nav li{
+  height: 50px;
+}
+
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: black;
+}
+
+nav a:hover{
+  background-color: #f0f0f0;
+}
+
+nav li:first-child{
+  margin-right: auto;
+}
+
+.sidebar{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60%;
+  background-color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.sidebar li{
+  width: 100%;
+}
+.sidebar a{
+  width: 100%;
+}
+
+.menu-button{
+  display: none;
+}
+
+#particles-js{
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  background-color: #121213;
+  background-image: url('');
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+.profile_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 20px 0;
+}
+.picture_container {
+  padding: 10px;
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: 500px;
+  background-image: url('./images/portrait.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.intro-text {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.major header{
+  z-index: 500;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+.card h1 {
+  color: royalblue;
+  font-size: 70px;
+}
+.card h3 {
+  text-align: center;
+  color: gray;
+  font-size: 20px;
+  align-self: end;
+}
+
+
+h1 {
+  color: royalblue;
+  display: block;
+  font-size: 2em;
+  margin-top: 1cm;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+a.blue {
+  color: blue;
+}
+
+.main {
+  max-width: 1200px;
+  min-height: calc(100vh - 100px);
+  margin: 2rem auto;
+  padding: 2rem 4rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.body {
+  margin: 0;
+}
+
+.profile {
+  text-align: center;
+}
+.profile header{
+  font-style: italic;
+}
+
+.CV {
+  padding-top: 20px;
+}
+
+.flag_counter {
+  text-align: center;
+  margin: 20px;
+}
+
+
+.main_profile_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.profile_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profilePic {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .main_profile_container {
+      gap: 1rem;
+  }
+
+  #profile_image_container {
+      text-align: center;
+      width: 100%;
+  }
+
+  #profilePic {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .profile_container {
+      height: auto;
+      padding: 10px 0;
+  }
+
+  .picture_container {
+      height: 400px;
+  }
+
+  #particles-js {
+      height: 40vh;
+  }
+}
+
+
+
+@media(max-width: 800px){
+  .profile_container {
+      height: 400px;
+  }
+  .card h1 {
+      font-size: 30px;
+  }
+  .card h3 {
+      font-size: 20px;
+  }
+
+  .hideOnMobile{
+      display: none;
+  }
+  .menu-button{
+      display: block;
+  }
+}
+
+@media(max-width: 400px){
+  .sidebar{
+      width: 100%;
+  }
+  #particles-js{
+      height: 300px !important;
+  }
+  
+}
+
+.card {
+  text-align: center;
+}
+
+.card h1, .card h3 {
+  margin: 0 auto;
+}
+
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* Main content styles */
+.main {
+  max-width: 1200px;
+  min-height: calc(100vh - 100px);
+  margin: 2rem auto;
+  padding: 2rem 4rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* CV section styles */
+.CV h2 {
+  color: #1a73e8;
+  border-bottom: 2px solid #1a73e8;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.CV ul {
+  padding-left: 1.5rem;
+}
+
+.CV li {
+  margin-bottom: 1rem;
+}
+
+/* Links styling */
+a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #174ea6;
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hideOnMobile {
+      display: none;
+  }
+  
+  .menu-button {
+      display: block;
+      margin-left: auto;
+  }
+  
+  .main {
+      margin: 0.5rem;
+      padding: 1rem;
+      width: calc(100% - 1rem);
+      min-height: calc(100vh - 80px);
+  }
+  
+  nav {
+      padding: 0.5rem 0;
+  }
+  
+  nav ul {
+      padding: 0 0.5rem;
+  }
+  
+  nav ul li {
+      padding: 0.5rem;
+  }
+  
+  nav a {
+      padding: 0 15px;
+  }
+
+  .sidebar {
+      width: 80%;
+      z-index: 1001;
+  }
+  
+  .sidebar li {
+      padding: 1rem;
+  }
+  
+  .sidebar a {
+      padding: 0.5rem 1rem;
+      width: calc(100% - 2rem);
+  }
+
+  body {
+      overflow-x: hidden;
+  }
+
+  h1 {
+      font-size: 1.8em;
+      margin-top: 0.5cm;
+  }
+
+  h2 {
+      font-size: 1.4em;
+  }
+
+  .card h1 {
+      font-size: 2em;
+  }
+
+  .card h3 {
+      font-size: 1.2em;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 400px) {
+  .sidebar {
+      width: 100%;
+  }
+  
+  .main {
+      margin: 0.25rem;
+      padding: 0.75rem;
+  }
+  
+  nav ul li {
+      padding: 0.25rem;
+  }
+  
+  nav a {
+      padding: 0 10px;
+  }
+  
+  h1 {
+      font-size: 1.6em;
+  }
+  
+  .card h1 {
+      font-size: 1.8em;
+  }
+}
+
+/* Additional styles for better readability */
+p {
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+
 .image-container {
     display: flex;
     justify-content: center;
