@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive 3D Tax Function Plot</title>
+  <script src="https://cdn.plot.ly/plotly-2.24.2.min.js"></script>
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Roboto, 'Segoe UI', sans-serif; background: #f9fafb; }
+    #plot { width: 100%; height: calc(100vh - 120px); margin-top: 16px; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 8px 16px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 12px;
+    }
+    .container { 
+        width: 100%;
+        max-width: 1400px;
+        padding: 16px; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    button, select, input {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover, select:hover, input:hover {
+      background: #1e40af;
+      color: white;
+    }
+    button { background: #2563eb; color: white; }
+    select { background: #374151; color: white; }
+    input { width: 120px; background: #e5e7eb; color: #111827; }
+    label { font-weight: 500; }
+  </style>
+</head>
+<body>
+<div class = "container">
+<div class="controls">
+  <button id="downloadPng">📥 Hlaða niður mynd</button>
+  <select id="scaleSelect">
+    <option value="1">💵 Möguleg skattleg hagræðing mánaðarlega</option>
+    <option value="12">💵 Möguleg skattleg hagræðing árlega</option>
+  </select>
+  <button id="replotBtn">🔄 Endurteikna</button>
+</div>
+<div class="controls">
+  <label for="xMax">Hámarkslaun Maka 1 í þúsundum):</label>
+  <input type="number" id="xMax" value="2000" step="100000">
+  <label for="yMax">Hámarkslaun Maka 2 í þúsundum:</label>
+  <input type="number" id="yMax" value="2000" step="100000">
+</div>
+<div class = "controls">
+    <h>Þín staða:</h>
+    <label for="mySalary1"> Laun Maka 1:</label>
+    <input type="number" id="mySalary1" value="500">
+
+    <label for="mySalary2">Laun Maka 2:</label>
+    <input type="number" id="mySalary2" value="500">
+<div>
+</div>
+</div>
+
+<div id="plot"></div>
+
+<script>
+  // constants in ISK
+  const persAfls = 68691;
+  const s1 = 0.3149;
+  const s2 = 0.3799;
+  const s3 = 0.4629;
+  const thr1 = 472000;
+  const thr2 = 1325000;
+
+  function f(maki1, maki2) {
+    if (maki1 < thr2 && maki2 < thr2) return 0;
+    if (maki1 > thr2 && maki2 > thr2) return 0;
+    const high = Math.max(maki1, maki2);
+    const low = Math.min(maki1, maki2);
+    const max_in_s2 = thr2 - Math.max(thr1, low);
+    const faerdur_skattur = Math.min(high - thr2, max_in_s2);
+    return faerdur_skattur * (s3 - s2);
+  }
+
+  function buildGrid(xmin, xmax, ymin, ymax, n){
+    const xs = [], ys = [];
+    for(let i=0;i<n;i++) xs.push(xmin + (xmax - xmin) * i / (n-1));
+    for(let j=0;j<n;j++) ys.push(ymin + (ymax - ymin) * j / (n-1));
+    return {xs, ys};
+  }
+
+  function computeZ(xs, ys, zscale, scaleFactor){
+    const Z = [];
+    for(let j=0;j<ys.length;j++){
+      const row = [];
+      for(let i=0;i<xs.length;i++){
+        const x = xs[i] / scaleFactor;
+        const y = ys[j] / scaleFactor;
+        let z = f(x, y);
+        if(!isFinite(z)) z = NaN;
+        row.push(z * zscale * scaleFactor);
+      }
+      Z.push(row);
+    }
+    return Z;
+  }
+
+  function computeMyPoint(scaleFactor){
+    const x = 1000*parseFloat(document.getElementById('mySalary1').value) || 0;
+    const y = 1000*parseFloat(document.getElementById('mySalary2').value) || 0;
+    const z = f(x / scaleFactor, y / scaleFactor) * scaleFactor;
+    return {x, y, z};
+  }
+  function plotSurface() {
+    const scaleFactor = parseFloat(document.getElementById('scaleSelect').value);
+    const xMaxInput = 1000*parseFloat(document.getElementById('xMax').value) || 2000;
+    const yMaxInput = 1000*parseFloat(document.getElementById('yMax').value) || 2000;
+
+    const xrange = [0, xMaxInput * scaleFactor];
+    const yrange = [0, yMaxInput * scaleFactor];
+    const n = 100;
+    const zscale = 1;
+
+    const {xs, ys} = buildGrid(xrange[0], xrange[1], yrange[0], yrange[1], n);
+    const Z = computeZ(xs, ys, zscale, scaleFactor);
+
+    const data = [{
+      type: 'surface',
+      x: xs,
+      y: ys,
+      z: Z,
+      colorscale: 'RdBu',
+      showscale: false
+    }];
+    const myPoint = computeMyPoint(scaleFactor);
+
+    data.push({
+        type: 'scatter3d',
+        mode: 'markers+text',
+        x: [myPoint.x],
+        y: [myPoint.y],
+        z: [myPoint.z+1000],
+        marker: {size: 6, color: 'red'},
+        hoverinfo:'none',
+        text: ['Þín staða: '+ myPoint.z.toLocaleString() + "k ISK"],
+        textposition: 'top center',
+        textoffset: [10],
+        textfont: {
+            size: 16,
+            color: 'white',
+            bacgroundcolor:'red',
+            family: 'Arial, sans-serif',
+            weight: 'bold'
+        }
+    });
+    const layout = {
+        title: 'Möguleg skattleg hagræðing einstaklnga í sambúð eftir tekjum á Íslandi (1. október 2025)' + (scaleFactor === 12 ? ' – Árleg' : ' – Mánaðarleg'),
+      scene: {
+        xaxis: {title:'Tekjur maka 1 (ISK)'},
+        yaxis: {title:'Tekjur maka 2 (ISK)'},
+        zaxis: {title:'Möguleg skattleg hagræðing (ISK)', rangemode:'tozero'},
+        camera: {eye:{x:2, y:2, z:1.2}},
+        aspectmode:'cube'
+      },
+      margin: {l:0, r:0, b:40, t:60}
+    };
+
+    Plotly.newPlot('plot', data, layout, {responsive:true});
+  }
+
+  document.getElementById('downloadPng').addEventListener('click', ()=>{
+    Plotly.toImage('plot', {format:'png', height:800, width:1200}).then(url=>{
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Skattleg_Hagraeding_2025.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  });
+
+  document.getElementById('scaleSelect').addEventListener('change', plotSurface);
+  document.getElementById('xMax').addEventListener('change', plotSurface);
+  document.getElementById('yMax').addEventListener('change', plotSurface);
+  document.getElementById('replotBtn').addEventListener('click', plotSurface);
+  document.getElementById('mySalary1').addEventListener('change', plotSurface);
+  document.getElementById('mySalary2').addEventListener('change', plotSurface);
+
+
+  // initial plot
+  plotSurface();
+</script>
+</body>
+</html>
