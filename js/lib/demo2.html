@@ -3,31 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Interactive 3D Tax Function Plot</title>
+  <title>Skattleg Hagraeding 2025</title>
   <script src="https://cdn.plot.ly/plotly-2.24.2.min.js"></script>
   <style>
-    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Roboto, 'Segoe UI', sans-serif; background: #f9fafb; }
-    #plot { width: 100%; height: calc(100vh - 120px); margin-top: 16px; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, Roboto, 'Segoe UI', sans-serif;
+      background: #f9fafb;
+    }
+    #plot {
+      width: 100%;
+      height: calc(100vh - 220px); /* leave more space for controls */
+      margin-top: 8px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .controls {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      padding: 8px 16px;
+      gap: 8px;
+      padding: 8px 12px;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin: 12px;
-    }
-    .container { 
-        width: 100%;
-        max-width: 1400px;
-        padding: 16px; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin: 8px;
+      width: 100%;
+      justify-content: center;
     }
     button, select, input {
-      padding: 10px 14px;
+      padding: 10px 12px;
       border: none;
       border-radius: 8px;
       font-size: 14px;
@@ -40,38 +51,62 @@
     }
     button { background: #2563eb; color: white; }
     select { background: #374151; color: white; }
-    input { width: 120px; background: #e5e7eb; color: #111827; }
-    label { font-weight: 500; }
+    input {
+      width: 100px;
+      background: #e5e7eb;
+      color: #111827;
+    }
+    label { font-weight: 500; font-size: 14px; }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      #plot {
+        height: 60vh; /* more compact plot on mobile */
+      }
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      button, select, input {
+        width: 100%; /* full width controls */
+        font-size: 16px;
+      }
+      label {
+        display: block;
+        margin-bottom: 4px;
+      }
+    }
   </style>
 </head>
 <body>
-<div class = "container">
-<div class="controls">
-  <button id="downloadPng">📥 Hlaða niður mynd</button>
-  <select id="scaleSelect">
-    <option value="1">💵 Möguleg skattleg hagræðing mánaðarlega</option>
-    <option value="12">💵 Möguleg skattleg hagræðing árlega</option>
-  </select>
-  <button id="replotBtn">🔄 Endurteikna</button>
-</div>
-<div class="controls">
-  <label for="xMax">Hámarkslaun Maka 1 í þúsundum):</label>
-  <input type="number" id="xMax" value="2000" step="100000">
-  <label for="yMax">Hámarkslaun Maka 2 í þúsundum:</label>
-  <input type="number" id="yMax" value="2000" step="100000">
-</div>
-<div class = "controls">
+<div class="container">
+  <div class="controls">
+    <button id="downloadPng">📥 Hlaða niður mynd</button>
+    <select id="scaleSelect">
+      <option value="1">💵 Möguleg skattleg hagræðing mánaðarlega</option>
+      <option value="12">💵 Möguleg skattleg hagræðing árlega</option>
+    </select>
+    <button id="replotBtn">🔄 Endurteikna</button>
+  </div>
+
+  <div class="controls">
+    <label for="xMax">Hámarkslaun Maka 1 í þúsundum):</label>
+    <input type="number" id="xMax" value="2000" step="100000">
+    <label for="yMax">Hámarkslaun Maka 2 í þúsundum:</label>
+    <input type="number" id="yMax" value="2000" step="100000">
+  </div>
+
+  <div class="controls">
     <h>Þín staða:</h>
-    <label for="mySalary1"> Laun Maka 1:</label>
+    <label for="mySalary1"> Mánaðarlaun Maka 1:</label>
     <input type="number" id="mySalary1" value="500">
-
-    <label for="mySalary2">Laun Maka 2:</label>
+    <label for="mySalary2">Mánaðarlaun Maka 2:</label>
     <input type="number" id="mySalary2" value="500">
-<div>
-</div>
-</div>
+  </div>
 
-<div id="plot"></div>
+  <div id="plot"></div>
+</div>
 
 <script>
   // constants in ISK
@@ -116,11 +151,12 @@
   }
 
   function computeMyPoint(scaleFactor){
-    const x = 1000*parseFloat(document.getElementById('mySalary1').value) || 0;
-    const y = 1000*parseFloat(document.getElementById('mySalary2').value) || 0;
+    const x = 1000*parseFloat(document.getElementById('mySalary1').value*scaleFactor) || 0;
+    const y = 1000*parseFloat(document.getElementById('mySalary2').value*scaleFactor) || 0;
     const z = f(x / scaleFactor, y / scaleFactor) * scaleFactor;
     return {x, y, z};
   }
+
   function plotSurface() {
     const scaleFactor = parseFloat(document.getElementById('scaleSelect').value);
     const xMaxInput = 1000*parseFloat(document.getElementById('xMax').value) || 2000;
@@ -133,43 +169,39 @@
 
     const {xs, ys} = buildGrid(xrange[0], xrange[1], yrange[0], yrange[1], n);
     const Z = computeZ(xs, ys, zscale, scaleFactor);
+    const myPoint = computeMyPoint(scaleFactor);
 
     const data = [{
       type: 'surface',
       x: xs,
       y: ys,
       z: Z,
-      colorscale: 'RdBu',
+      colorscale: 'Turbo',
       showscale: false
+    },{
+      type:'scatter3d',
+      mode:'markers+text',
+      x: [myPoint.x-2000*scaleFactor],
+      y: [myPoint.y-2000*scaleFactor],
+      z: [myPoint.z+1000*scaleFactor],
+      marker: {size:6, color: 'red'},
+      hoverinfo:'none',
+      text: ['Þín staða: '+ myPoint.z.toLocaleString() + "k ISK"],
+      textfont: {
+        family: 'Arial Black, Arial, sans-serif',
+        size: 14,
+        color: 'black'
+      },
+      textposition: 'top center'
     }];
-    const myPoint = computeMyPoint(scaleFactor);
 
-    data.push({
-        type: 'scatter3d',
-        mode: 'markers+text',
-        x: [myPoint.x],
-        y: [myPoint.y],
-        z: [myPoint.z+1000],
-        marker: {size: 6, color: 'red'},
-        hoverinfo:'none',
-        text: ['Þín staða: '+ myPoint.z.toLocaleString() + "k ISK"],
-        textposition: 'top center',
-        textoffset: [10],
-        textfont: {
-            size: 16,
-            color: 'white',
-            bacgroundcolor:'red',
-            family: 'Arial, sans-serif',
-            weight: 'bold'
-        }
-    });
     const layout = {
-        title: 'Möguleg skattleg hagræðing einstaklnga í sambúð eftir tekjum á Íslandi (1. október 2025)' + (scaleFactor === 12 ? ' – Árleg' : ' – Mánaðarleg'),
+      title: 'Möguleg skattleg hagræðing einstaklnga í sambúð eftir tekjum á Íslandi (1. október 2025)' + (scaleFactor === 12 ? ' – Árleg' : ' – Mánaðarleg'),
       scene: {
         xaxis: {title:'Tekjur maka 1 (ISK)'},
         yaxis: {title:'Tekjur maka 2 (ISK)'},
-        zaxis: {title:'Möguleg skattleg hagræðing (ISK)', rangemode:'tozero'},
-        camera: {eye:{x:2, y:2, z:1.2}},
+        zaxis: {title:'Hagræðing (ISK)', rangemode:'tozero'},
+        camera: {eye:{x:-2, y:-2, z:1.2}},
         aspectmode:'cube'
       },
       margin: {l:0, r:0, b:40, t:60}
@@ -192,7 +224,6 @@
   document.getElementById('replotBtn').addEventListener('click', plotSurface);
   document.getElementById('mySalary1').addEventListener('change', plotSurface);
   document.getElementById('mySalary2').addEventListener('change', plotSurface);
-
 
   // initial plot
   plotSurface();
