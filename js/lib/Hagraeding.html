@@ -1,357 +1,93 @@
 <!doctype html>
-<html lang="en">
+<html lang="is">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Skattleg Hagraeding 2025</title>
+  <title>Skattleg Hagræðing 2025</title>
   <script src="https://cdn.plot.ly/plotly-2.24.2.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9fafb;
-      display: flex;
-      justify-content: center;
-      padding: 40px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 90%;
-      max-width: 1000px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    thead {
-      background: #2563eb;
-      color: white;
-    }
-    thead th {
-      padding: 12px 15px;
-      text-align: center;
-      font-size: 14px;
-    }
-    tbody tr:nth-child(even) {
-      background: #f1f5f9;
-    }
-    tbody tr:hover {
-      background: #e0f2fe;
-    }
-    td {
-      padding: 12px 15px;
-      text-align: center;
-      font-size: 14px;
-      color: #333;
-    }
-    tbody td:first-child {
-      font-weight: bold;
-      background: #f8fafc;
-      text-align: left;
-    }
-  </style>
-
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: system-ui, -apple-system, Roboto, 'Segoe UI', sans-serif;
-      background: #f9fafb;
-    }
-    #plot {
-      width: 100%;
-      height: calc(100vh - 220px); /* leave more space for controls */
-      margin-top: 8px;
-    }
-    .container {
-      width: 100%;
-      max-width: 1400px;
-      padding: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 8px 12px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      margin: 8px;
-      width: 100%;
-      justify-content: center;
-    }
-    button, select, input {
-      padding: 10px 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    button:hover, select:hover, input:hover {
-      background: #1e40af;
-      color: white;
-    }
-    button { background: #2563eb; color: white; }
-    select { background: #374151; color: white; }
-    input {
-      width: 100px;
-      background: #e5e7eb;
-      color: #111827;
-    }
-    label { font-weight: 500; font-size: 14px; }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      #plot {
-        height: 60vh; /* more compact plot on mobile */
-      }
-      .controls {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-      }
-      button, select, input {
-        width: 100%; /* full width controls */
-        font-size: 16px;
-      }
-      label {
-        display: block;
-        margin-bottom: 4px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style_hagr.css">
 </head>
 <body>
-<div class="container">
-  <div class="controls">
-    <button id="downloadPng">📥 Hlaða niður mynd</button>
-    <select id="scaleSelect">
-      <option value="1">💵 Möguleg skattleg hagræðing mánaðarlega</option>
-      <option value="12">💵 Möguleg skattleg hagræðing árlega</option>
-    </select>
-    <button id="replotBtn">🔄 Endurteikna</button>
+  <div class="container">
+    <div class="controls">
+      <button id="downloadPng">📥 Hlaða niður mynd</button>
+      <select id="scaleSelect">
+        <option value="1">💵 Möguleg skattleg hagræðing mánaðarlega</option>
+        <option value="12">💵 Möguleg skattleg hagræðing árlega</option>
+      </select>
+      <button id="replotBtn">🔄 Endurteikna</button>
+    </div>
+
+    <div class="controls">
+      <h3>Þín staða:</h3>
+
+      <label for="mySalary1">Mánaðarlaun 1:</label>
+      <div class="number-box">
+        <input type="text" id="mySalary1" value="500">
+        <span class="suffix">kr.</span>
+      </div>
+
+      <label for="mySalary2">Mánaðarlaun 2:</label>
+      <div class="number-box">
+        <input type="text" id="mySalary2" value="500">
+        <span class="suffix">kr.</span>
+      </div>
+    </div>
+
+    <div id="plot"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Iðnaðarfólk</th>
+          <th>Sérfræðingar</th>
+          <th>Skrifstofufólk</th>
+          <th>Stjórnendur</th>
+          <th>Tæknar</th>
+          <th>Verkafólk</th>
+          <th>Þjónusta og umönnun</th>
+          <th>Alls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Geta ekki nýtt sér tilfærslu milli skattþrepa</td>
+          <td>75%</td>
+          <td>87%</td>
+          <td>99%</td>
+          <td>50%</td>
+          <td>85%</td>
+          <td>98%</td>
+          <td>98%</td>
+          <td>87%</td>
+        </tr>
+        <tr>
+          <td>Hlutfall sem geta nýtt sér tilfærslu milli skattþrepa</td>
+          <td>25%</td>
+          <td>13%</td>
+          <td>1%</td>
+          <td>50%</td>
+          <td>15%</td>
+          <td>2%</td>
+          <td>2%</td>
+          <td>13%</td>
+        </tr>
+        <tr>
+          <td>Hlutfall sem getur fullnýtt tilfærslu milli skattþrepa</td>
+          <td>6%</td>
+          <td>4%</td>
+          <td>0.08%</td>
+          <td>27%</td>
+          <td>8%</td>
+          <td>0.5%</td>
+          <td>0.2%</td>
+          <td>6%</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="controls">
-    <label for="xMax">Hámarkslaun Maka 1 í þúsundum):</label>
-    <input type="number" id="xMax" value="2000" step="100000">
-    <label for="yMax">Hámarkslaun Maka 2 í þúsundum:</label>
-    <input type="number" id="yMax" value="2000" step="100000">
-  </div>
-
-  <div class="controls">
-    <h>Þín staða:</h>
-    <label for="mySalary1"> Mánaðarlaun Maka 1:</label>
-    <input type="number" id="mySalary1" value="500">
-    <label for="mySalary2">Mánaðarlaun Maka 2:</label>
-    <input type="number" id="mySalary2" value="500">
-  </div>
-
-  <div id="plot"></div>
-  <title>Styled Table</title>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Iðnaðarfólk</th>
-        <th>Sérfræðingar</th>
-        <th>Skrifstofufólk</th>
-        <th>Stjórnendur</th>
-        <th>Tæknar</th>
-        <th>Verkafólk</th>
-        <th>Þjónusta og umönnun</th>
-        <th>Alls</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Geta ekki nýtt sér tilfærslu milli skattþrepa</td>
-        <td>75%</td>
-        <td>87%</td>
-        <td>99%</td>
-        <td>50%</td>
-        <td>85%</td>
-        <td>98%</td>
-        <td>98%</td>
-        <td>87%</td>
-      </tr>
-      <tr>
-        <td>Hlutfall sem geta nýtt sér tilfærslu milli skattþrepa</td>
-        <td>25%</td>
-        <td>13%</td>
-        <td>1%</td>
-        <td>50%</td>
-        <td>15%</td>
-        <td>2%</td>
-        <td>2%</td>
-        <td>13%</td>
-      </tr>
-      <tr>
-        <td>Hlutfall sem getur fullnýtt tilfærslu milli skattþrepa</td>
-        <td>6%</td>
-        <td>4%</td>
-        <td>0.08%</td>
-        <td>27%</td>
-        <td>8%</td>	
-        <td>0.5%</td>	
-        <td>0.2%</td>
-        <td>6% </td>
-      </tr>
-    </tbody>
-  </table>
-
-  
-</div>
-
-<script>
-  // constants in ISK
-  const persAfls = 68691;
-  const s1 = 0.3149;
-  const s2 = 0.3799;
-  const s3 = 0.4629;
-  const thr1 = 472006;
-  const thr2 = 1325127;
-
-
-  // Kóði fengin frá https://reiknivelsamskottun.replit.app/script.js
-  function calculateTax(maki1,maki2) {
-      // Get input values and convert to annual
-      const etes_s = Math.max(maki1,maki2) * 12;
-      const etes_m_s = Math.min(maki1,maki2) * 12;
-
-    
-      // Tax parameters (annual values)
-      const mork_1_2 = 5664062;
-      const mork_2_3 = 15901524;
-      const pros2 = 0.065;
-      const pros3 = 0.083;
-
-      // Calculate tax reduction
-      const efri_mork_nota = mork_2_3 === 0 ? mork_1_2 : mork_2_3;
-      const nedri_mork_nota = mork_2_3 === 0 ? 0 : mork_1_2;
-      const milli_pros_nota = pros3 === 0 ? pros2 : pros3;
-
-      const stor_samskottun = (etes_s > efri_mork_nota && etes_m_s < efri_mork_nota) ? 1 : 0;
-      const umfram_efri_mork = stor_samskottun === 1 ? etes_s - efri_mork_nota : 0;
-      const tekjur_m_notad = etes_m_s > nedri_mork_nota ? etes_m_s - nedri_mork_nota : 0;
-
-      const halft_threpabil = stor_samskottun === 1 
-          ? (efri_mork_nota - nedri_mork_nota - tekjur_m_notad) / 2 
-          : 0;
-
-      const upph_samnyting = (stor_samskottun === 1 && etes_s > etes_m_s)
-          ? Math.min(umfram_efri_mork, halft_threpabil)
-          : 0;
-
-      const laekkun_v_samnytingar = Math.round(upph_samnyting * milli_pros_nota);
-      return Math.round(laekkun_v_samnytingar/12);
-  }
-
-  function buildGrid(xmin, xmax, ymin, ymax, n){
-    const xs = [], ys = [];
-    for(let i=0;i<n;i++) xs.push(xmin + (xmax - xmin) * i / (n-1));
-    for(let j=0;j<n;j++) ys.push(ymin + (ymax - ymin) * j / (n-1));
-    return {xs, ys};
-  }
-
-  function computeZ(xs, ys, zscale, scaleFactor){
-    const Z = [];
-    for(let j=0;j<ys.length;j++){
-      const row = [];
-      for(let i=0;i<xs.length;i++){
-        const x = xs[i] / scaleFactor;
-        const y = ys[j] / scaleFactor;
-        let z = calculateTax(x, y);
-        if(!isFinite(z)) z = NaN;
-        row.push(z * zscale * scaleFactor);
-      }
-      Z.push(row);
-    }
-    return Z;
-  }
-
-  function computeMyPoint(scaleFactor){
-    const x = 1000*parseFloat(document.getElementById('mySalary1').value*scaleFactor) || 0;
-    const y = 1000*parseFloat(document.getElementById('mySalary2').value*scaleFactor) || 0;
-    const z = calculateTax(x / scaleFactor, y / scaleFactor) * scaleFactor;
-    return {x, y, z};
-  }
-
-  function plotSurface() {
-    const scaleFactor = parseFloat(document.getElementById('scaleSelect').value);
-    const xMaxInput = 1000*parseFloat(document.getElementById('xMax').value) || 2000;
-    const yMaxInput = 1000*parseFloat(document.getElementById('yMax').value) || 2000;
-
-    const xrange = [0, xMaxInput * scaleFactor];
-    const yrange = [0, yMaxInput * scaleFactor];
-    const n = 100;
-    const zscale = 1;
-
-    const {xs, ys} = buildGrid(xrange[0], xrange[1], yrange[0], yrange[1], n);
-    const Z = computeZ(xs, ys, zscale, scaleFactor);
-    const myPoint = computeMyPoint(scaleFactor);
-
-    const data = [{
-      type: 'surface',
-      x: xs,
-      y: ys,
-      z: Z,
-      colorscale: 'Turbo',
-      showscale: false
-    },{
-      type:'scatter3d',
-      mode:'markers+text',
-      x: [myPoint.x-2000*scaleFactor],
-      y: [myPoint.y-2000*scaleFactor],
-      z: [myPoint.z+1000*scaleFactor],
-      marker: {size:6, color: 'red'},
-      hoverinfo:'none',
-      text: ['Þín staða: '+ Math.ceil(myPoint.z).toLocaleString() + "k ISK"],
-      textfont: {
-        family: 'Arial Black, Arial, sans-serif',
-        size: 14,
-        color: 'black'
-      },
-      textposition: 'top center'
-    }];
-
-    const layout = {
-      title: 'Möguleg skattleg hagræðing einstaklnga í sambúð eftir tekjum á Íslandi (1. október 2025)' + (scaleFactor === 12 ? ' – Árleg' : ' – Mánaðarleg'),
-      scene: {
-        xaxis: {title:'Tekjur maka 1 (ISK)'},
-        yaxis: {title:'Tekjur maka 2 (ISK)'},
-        zaxis: {title:'Hagræðing (ISK)', rangemode:'tozero'},
-        camera: {eye:{x:-2, y:-2, z:1.2}},
-        aspectmode:'cube'
-      },
-      margin: {l:0, r:0, b:40, t:60}
-    };
-
-    Plotly.newPlot('plot', data, layout, {responsive:true});
-  }
-
-  document.getElementById('downloadPng').addEventListener('click', ()=>{
-    Plotly.toImage('plot', {format:'png', height:800, width:1200}).then(url=>{
-      const a = document.createElement('a');
-      a.href = url; a.download = 'Skattleg_Hagraeding_2025.png';
-      document.body.appendChild(a); a.click(); a.remove();
-    });
-  });
-
-  document.getElementById('scaleSelect').addEventListener('change', plotSurface);
-  document.getElementById('xMax').addEventListener('change', plotSurface);
-  document.getElementById('yMax').addEventListener('change', plotSurface);
-  document.getElementById('replotBtn').addEventListener('click', plotSurface);
-  document.getElementById('mySalary1').addEventListener('change', plotSurface);
-  document.getElementById('mySalary2').addEventListener('change', plotSurface);
-
-  // initial plot
-  plotSurface();
-</script>
-
-
-
+  <script src="script.js"></script>
 </body>
 </html>
