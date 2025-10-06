@@ -118,7 +118,7 @@ function plotSurface() {
   ];
 
   const layout = {
-    title: 'Möguleg skattleg hagræðing í sambúð vegna tilfluttnings milli skattþrpa eftir tekjum á Íslandi (1. október 2025)' +
+    title: 'Möguleg skattleg hagræðing í sambúð vegna tilfluttnings milli skattþrepa eftir tekjum á Íslandi (1. október 2025)' +
       (scaleFactor === 12 ? ' – Árleg' : ' – Mánaðarleg'),
     scene: {
       xaxis: { title: 'Tekjur maka 1 (ISK)' },
