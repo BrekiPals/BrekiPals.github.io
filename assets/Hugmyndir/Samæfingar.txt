@@ -1,0 +1,4 @@
+Seperable permutations.
+Hasse minkowski theorem.
+Young diagrams.
+Elipic curves? 
